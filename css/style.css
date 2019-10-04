@@ -118,14 +118,28 @@ header {
 	}
 }
 
+/* button animation */
+@keyframes infrombottom {
+	0% {
+		opacity: 0;
+		transform: translateY(60px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
 .btn:link,
 .btn:visited {
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 15px 40px;
-	border-radius: 15px;
+	border-radius: 100px;
 	display: inline-block;
 	transition: all 0.2s;
+	position: relative;
 }
 
 .btn:hover {
@@ -141,4 +155,39 @@ header {
 .btn-white {
 	background-color: white;
 	color: #777;
+}
+
+/* pseudo element. the trick is to put almost the exact replica of the element and
+put behind the original element */
+.btn::after {
+	/* first thing we need to specify its content */
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	/* the.btn::after is like a child of .btn so when we say width 100%, means
+	100% of btn element */
+	border-radius: 100px;
+	/* we use the position property to put it behind the button */
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all 0.4s;
+}
+
+/* to make the .btn::after white we have to use: */
+.btn-white::after {
+	background-color: white;
+}
+
+.btn:hover::after {
+	transform: scalex(1.5) scaleY(1.5);
+	/* for the fade out we play on the opacity */
+	opacity: 0;
+}
+
+.btn-animated {
+	animation: infrombottom 0.6s ease-out 0.75s;
+	animation-fill-mode: backwards;
 }
