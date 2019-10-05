@@ -8,20 +8,29 @@ Dark green: #28b485
 */
 
 /* css reset */
-* {
+*,
+*::after,
+*::before {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	/* we use  % so the user can change the font-size zoom in zoom out */
 }
 
 body {
 	/* let's set a font for the whole site */
 	font-family: "lato", sans-serif;
 	font-weight: 400;
-	font-size: 16px;
+	/* font-size: 16px; */
+
 	line-height: 1.7;
 	color: #777;
-	padding: 25px;
+	padding: 3rem;
+	box-sizing: border-box;
 }
 
 header {
@@ -38,17 +47,17 @@ header {
 	position: relative;
 }
 
-.logo-box {
+.header__logo-box {
 	position: absolute;
-	top: 40px;
-	left: 40px;
+	top: 4rem;
+	left: 4rem;
 }
 
-.logo {
-	height: 35px;
+.header__logo {
+	height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
 	position: absolute;
 	top: 40%;
 	left: 50%;
@@ -64,36 +73,36 @@ header {
 	backface-visibility: hidden;
 }
 
-.heading-primary-main {
+.heading-primary--main {
 	display: block;
-	font-size: 50px;
-	letter-spacing: 21px;
+	font-size: 5rem;
+	letter-spacing: 2rem;
 	font-weight: 400;
 	animation-name: infromleft;
 	animation-duration: 1s;
 	animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
 	display: block;
-	font-size: 20px;
-	letter-spacing: 10px;
+	font-size: 2rem;
+	letter-spacing: 1rem;
 	font-weight: 400;
 	/* animation-name: infromright;
 	animation-duration: 4s;
 	animation-timing-function: fade-in; */
 	animation: infromright 1s ease-in;
-	margin-bottom: 40px;
+	margin-bottom: 4rem;
 }
 
 @keyframes infromleft {
 	0% {
 		opacity: 0;
-		transform: translateX(-100px);
+		transform: translateX(-10rem);
 	}
 
 	80% {
-		transform: translateX(20px);
+		transform: translateX(2rem);
 	}
 
 	100% {
@@ -105,11 +114,11 @@ header {
 @keyframes infromright {
 	0% {
 		opacity: 0;
-		transform: translateX(100px);
+		transform: translateX(10rem);
 	}
 
 	80% {
-		transform: translateX(-20px);
+		transform: translateX(-2rem);
 	}
 
 	100% {
@@ -122,7 +131,7 @@ header {
 @keyframes infrombottom {
 	0% {
 		opacity: 0;
-		transform: translateY(60px);
+		transform: translateY(6rem);
 	}
 
 	100% {
@@ -135,24 +144,25 @@ header {
 .btn:visited {
 	text-decoration: none;
 	text-transform: uppercase;
-	padding: 15px 40px;
-	border-radius: 100px;
+	padding: 1.5rem 4rem;
+	border-radius: 10rem;
 	display: inline-block;
 	transition: all 0.2s;
 	position: relative;
+	font-size: 1.6rem;
 }
 
 .btn:hover {
 	transform: translateY(-3px);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
 	transform: translateY(-1px);
-	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
 	background-color: white;
 	color: #777;
 }
@@ -177,7 +187,7 @@ put behind the original element */
 }
 
 /* to make the .btn::after white we have to use: */
-.btn-white::after {
+.btn--white::after {
 	background-color: white;
 }
 
@@ -187,7 +197,7 @@ put behind the original element */
 	opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
 	animation: infrombottom 0.6s ease-out 0.75s;
 	animation-fill-mode: backwards;
 }
