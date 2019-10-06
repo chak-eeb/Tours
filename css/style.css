@@ -20,28 +20,25 @@ body {
   padding: 3rem;
   box-sizing: border-box; }
 
-header {
+.header {
   height: 95vh;
   background-image: linear-gradient(to left bottom, rgba(11, 80, 16, 0.795), rgba(95, 180, 93, 0.795)), url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   color: #fff;
@@ -49,26 +46,24 @@ header {
   /* we use this property so we don't see the back
 	 of the element and to fix the shakiness on the h1 */
   backface-visibility: hidden; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 5rem;
-  letter-spacing: 2rem;
-  font-weight: 400;
-  animation-name: infromleft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  letter-spacing: 1rem;
-  font-weight: 400;
-  /* animation-name: infromright;
-	animation-duration: 4s;
-	animation-timing-function: fade-in; */
-  animation: infromright 1s ease-in;
-  margin-bottom: 4rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 2rem;
+    font-weight: 400;
+    animation-name: infromleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    font-weight: 400;
+    /* animation-name: infromright;
+        animation-duration: 4s;
+        animation-timing-function: fade-in; */
+    animation: infromright 1s ease-in;
+    margin-bottom: 4rem; }
 
 @keyframes infromleft {
   0% {
@@ -99,56 +94,49 @@ header {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  display: inline-block;
-  transition: all 0.2s;
-  position: relative;
-  font-size: 1.6rem; }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* pseudo element. the trick is to put almost the exact replica of the element and
+.btn {
+  /* pseudo element. the trick is to put almost the exact replica of the element and
 put behind the original element */
-.btn::after {
-  /* first thing we need to specify its content */
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  /* the.btn::after is like a child of .btn so when we say width 100%, means
+  /* to make the .btn::after white we have to use: */ }
+  .btn:link, .btn:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover:after {
+      transform: scalex(1.5) scaleY(1.5);
+      /* for the fade out we play on the opacity */
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white:after {
+      background-color: #fff; }
+  .btn::after {
+    /* first thing we need to specify its content */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /* the&::after is like a child of & so when we say width 100%, means
 	100% of btn element */
-  border-radius: 100px;
-  /* we use the position property to put it behind the button */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s; }
-
-/* to make the .btn::after white we have to use: */
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scalex(1.5) scaleY(1.5);
-  /* for the fade out we play on the opacity */
-  opacity: 0; }
-
-.btn--animated {
-  animation: infrombottom 0.6s ease-out 0.75s;
-  animation-fill-mode: backwards; }
+    border-radius: 100px;
+    /* we use the position property to put it behind the button */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; }
+  .btn--animated {
+    animation: infrombottom 0.6s ease-out 0.75s;
+    animation-fill-mode: backwards; }
