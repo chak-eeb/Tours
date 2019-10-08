@@ -2,42 +2,15 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
-@import "base/abstracts";
+@import "base/animation";
 @import "base/base";
-@import "base/components";
-@import "base/layout";
-@import "base/pages";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/composition";
+
+@import "layout/header";
+@import "layout/grid";
 
 @import "pages/home";
-@import "components/button";
-@import "layout/header";
-
-.heading-primary {
-	color: $color-white;
-	text-transform: uppercase;
-	/* we use this property so we don't see the back
-	 of the element and to fix the shakiness on the h1 */
-	backface-visibility: hidden;
-
-	&--main {
-		display: block;
-		font-size: 5rem;
-		letter-spacing: 2rem;
-		font-weight: 400;
-		animation-name: infromleft;
-		animation-duration: 1s;
-		animation-timing-function: ease-out;
-	}
-
-	&--sub {
-		display: block;
-		font-size: 2rem;
-		letter-spacing: 1rem;
-		font-weight: 400;
-		/* animation-name: infromright;
-        animation-duration: 4s;
-        animation-timing-function: fade-in; */
-		animation: infromright 1s ease-in;
-		margin-bottom: 4rem;
-	}
-}

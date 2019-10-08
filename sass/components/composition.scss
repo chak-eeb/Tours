@@ -1,0 +1,25 @@
+.composition {
+	position: relative;
+	&__photo {
+		// try to always define the width of images in %
+		width: 55%;
+		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+		border-radius: 2px;
+		position: absolute;
+
+		&--p1 {
+			top: -2rem;
+			left: 0;
+		}
+
+		&--p2 {
+			top: 6rem;
+			right: 0;
+		}
+
+		&--p3 {
+			top: 12rem;
+			left: 8rem;
+		}
+	}
+}
