@@ -6,6 +6,9 @@
 		box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
 		border-radius: 2px;
 		position: absolute;
+		transition: all 0.2s;
+		z-index: 10;
+		outline-offset: 1.5rem;
 
 		&--p1 {
 			top: -2rem;
@@ -21,5 +24,16 @@
 			top: 12rem;
 			left: 8rem;
 		}
+
+		&:hover {
+			outline: 1.5rem solid $color-primary;
+			transform: scale(1.1) translateY(-0.5rem);
+			box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
+			z-index: 20;
+		}
+	}
+
+	&:hover &__photo:not(:hover) {
+		transform: scale(0.9);
 	}
 }
