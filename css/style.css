@@ -205,6 +205,24 @@ put behind the original element */
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.9); }
 
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    padding: 0.5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #5fb45d, #0b5010);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.05); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to left bottom, rgba(11, 80, 16, 0.795), rgba(95, 180, 93, 0.795)), url("../img/hero.jpg");
@@ -255,3 +273,12 @@ put behind the original element */
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -25vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to left bottom, rgba(11, 80, 16, 0.795), rgba(95, 180, 93, 0.795)), url("../img/nat-4.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
